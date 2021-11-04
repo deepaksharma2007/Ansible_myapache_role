@@ -36,4 +36,4 @@ BSD
 
 Author Information
 ------------------
-The author of this roley Deepak Sharma.
+The author of this role is Deepak Sharma.
