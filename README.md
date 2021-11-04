@@ -1,31 +1,33 @@
-Role Name
+ansible_myapache_role
 =========
 
-A brief description of the role goes here.
+myapache role is used to configure apache webserver using httpd product. 
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ansible must be configured well in your controller node
+We must have connectivity between controller node and Managed node. You can check by command (ansible webservers -m ping) .
+Also make host name of servers in inventory file must be "webservers". Add all servers under "webservers" host to configure apache webservers.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. I used basically two variable
+1. pkgs: This is used to tell which software will be install.
+2. rule: This is used to create firewall rule . So we can access http and https services.
 
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
+    - hosts: webservers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: path }
+      
+      here path = where you download "myapache" role
 
 License
 -------
@@ -34,5 +36,4 @@ BSD
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+The author of this roley Deepak Sharma.
