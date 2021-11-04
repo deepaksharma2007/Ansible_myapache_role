@@ -7,7 +7,9 @@ Requirements
 ------------
 
 Ansible must be configured well in your controller node
+
 We must have connectivity between controller node and Managed node. You can check by command (ansible webservers -m ping) .
+
 Also make host name of servers in inventory file must be "webservers". Add all servers under "webservers" host to configure apache webservers.
 
 Role Variables
