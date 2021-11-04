@@ -1,4 +1,4 @@
-ansible_myapache_role
+myapache
 =========
 
 myapache role is used to configure apache webserver using httpd product. 
